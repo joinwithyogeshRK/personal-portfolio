@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary theme colors - Deep navy (#0B132B) */
+  --primary: 222 58% 11%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 179 50% 56%;
+  --secondary-foreground: 0 0% 0%;
+  --accent: 263 91% 49%;
+  --accent-foreground: 0 0% 100%;
+  
+  /* System Colors */
+  --success: 160 84% 39%;
+  --success-foreground: 210 40% 98%;
+  --success-muted: 160 84% 90%;
+  --warning: 9 100% 64%;
+  --warning-foreground: 0 0% 0%;
+  --warning-muted: 9 100% 90%;
+  --error: 359 100% 68%;
+  --error-foreground: 210 40% 98%;
+  --error-muted: 359 100% 90%;
+  --info: 179 50% 56%;
+  --info-foreground: 0 0% 0%;
+  --info-muted: 179 50% 90%;
+  
+  /* Surface Colors */
+  --surface: 0 0% 100%;
+  --surface-foreground: 222 58% 11%;
+  --surface-muted: 222 20% 96%;
+  --background: 0 0% 100%;
+  --foreground: 222 58% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 58% 11%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 58% 11%;
+  --muted: 222 20% 96%;
+  --muted-foreground: 222 10% 45%;
+  
+  /* Color scales - Primary (Deep Navy) */
+  --primary-50: 222 58% 98%;
+  --primary-100: 222 58% 90%;
+  --primary-200: 222 58% 80%;
+  --primary-300: 222 58% 70%;
+  --primary-400: 222 58% 50%;
+  --primary-500: 222 58% 30%;
+  --primary-600: 222 58% 20%;
+  --primary-700: 222 58% 15%;
+  --primary-800: 222 58% 11%;
+  --primary-900: 222 58% 7%;
+  
+  /* Color scales - Secondary (Teal) */
+  --secondary-50: 179 50% 96%;
+  --secondary-100: 179 50% 90%;
+  --secondary-200: 179 50% 80%;
+  --secondary-300: 179 50% 70%;
+  --secondary-400: 179 50% 65%;
+  --secondary-500: 179 50% 56%;
+  --secondary-600: 179 50% 46%;
+  --secondary-700: 179 50% 36%;
+  --secondary-800: 179 50% 26%;
+  --secondary-900: 179 50% 16%;
+  
+  /* Color scales - Accent (Purple) */
+  --accent-50: 263 91% 97%;
+  --accent-100: 263 91% 92%;
+  --accent-200: 263 91% 85%;
+  --accent-300: 263 91% 75%;
+  --accent-400: 263 91% 65%;
+  --accent-500: 263 91% 55%;
+  --accent-600: 263 91% 49%;
+  --accent-700: 263 91% 40%;
+  --accent-800: 263 91% 30%;
+  --accent-900: 263 91% 20%;
+  
+  /* System Variables */
+  --border: 222 30% 92%;
+  --input: var(--border);
+  --ring: var(--primary);
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 222 58% 5%;
+  --foreground: 0 0% 95%;
+  --card: 222 58% 7%;
+  --card-foreground: 0 0% 95%;
+  --popover: 222 58% 7%;
+  --popover-foreground: 0 0% 95%;
+  --primary: 222 58% 15%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 179 50% 56%;
+  --secondary-foreground: 0 0% 0%;
+  --muted: 222 40% 15%;
+  --muted-foreground: 222 30% 70%;
+  --accent: 263 91% 55%;
+  --accent-foreground: 0 0% 100%;
+  --border: 222 40% 20%;
+  --input: 222 40% 20%;
+  --ring: 222 58% 15%;
+  --surface: 222 58% 7%;
+  --surface-foreground: 0 0% 95%;
+  --surface-muted: 222 40% 15%;
+  --success: 160 84% 50%;
+  --warning: 9 100% 70%;
+  --error: 359 100% 75%;
+  --info: 179 50% 65%;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary-700 transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground px-4 py-2 rounded-md hover:bg-secondary-600 transition-colors;
+  }
+  
+  .btn-accent {
+    @apply bg-accent text-accent-foreground px-4 py-2 rounded-md hover:bg-accent-700 transition-colors;
+  }
+  
+  .btn-outline {
+    @apply border border-input bg-background hover:bg-muted px-4 py-2 rounded-md transition-colors;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent;
+  }
+  
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24;
+  }
+  
+  .heading-xl {
+    @apply font-heading text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight;
+  }
+  
+  .heading-lg {
+    @apply font-heading text-3xl md:text-4xl font-bold tracking-tight;
+  }
+  
+  .heading-md {
+    @apply font-heading text-2xl md:text-3xl font-bold tracking-tight;
+  }
+  
+  .heading-sm {
+    @apply font-heading text-xl md:text-2xl font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  
+  .gradient-mask-b {
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  }
+  
+  .gradient-mask-t {
+    mask-image: linear-gradient(to top, black 50%, transparent 100%);
+  }
+}
